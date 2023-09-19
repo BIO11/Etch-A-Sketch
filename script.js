@@ -8,8 +8,8 @@ gridButton.addEventListener('click', () => {
     let squares = parseInt(prompt("How many squares per side?"));
 
     // checks for errors - if input is wrong, squares goes back to 16
-    // has to be an int > 0 and <= 50
-    if (!Number.isInteger(squares) || squares > 50 || squares <= 0) {
+    // has to be an int > 0 and <= 128
+    if (!Number.isInteger(squares) || squares > 128 || squares <= 0) {
         squares = 16
     }
 
@@ -59,4 +59,4 @@ resetButton.addEventListener('click', () => {
     })
 })
 
-createGrid(16); // default # of squares per side
+createGrid(16); // default # of squares per side is 16
