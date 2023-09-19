@@ -1,7 +1,7 @@
 let newDiv;
 let board = document.querySelector(".board");
-let rows = 10;
-let cols = 10;
+let rows = 16;
+let cols = 16;
 
 // creates the 16 row containers
 let divRowContainers = [];
@@ -25,6 +25,13 @@ let hoverDivs = document.querySelectorAll(".hover-div");
 
 hoverDivs.forEach(function(hoverDiv) {
     hoverDiv.addEventListener('mouseover', (e) => {
-        hoverDiv.style.backgroundColor = "yellow";
+        hoverDiv.style.backgroundColor = "brown";
+    })
+})
+
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener('click', () => {
+    hoverDivs.forEach(function(hoverDiv) {
+        hoverDiv.style.backgroundColor = "white";
     })
 })
