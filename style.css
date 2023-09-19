@@ -7,11 +7,19 @@ body {
     justify-content: center;
 }
 
+.title {
+    margin-bottom: 2vh;
+}
+
+.change-grid-size {
+    margin-bottom: 2vh;
+}
+
 .board {
     display: flex;
     flex-direction: column;
-    height: 50vh;
-    width: 50vh;
+    height: 75vh;
+    width: 75vh;
 }
 
 .reset {
