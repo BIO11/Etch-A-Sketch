@@ -1,0 +1,27 @@
+/* containers of 16 divs each will be added as columns */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hover-div {
+    background-color: brown;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
