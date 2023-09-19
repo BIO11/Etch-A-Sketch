@@ -1,12 +1,18 @@
-let newDiv;
+let hoverDivs; // sets hoverDivs to global scope so it can be accessed by resetButton
 
 const gridButton = document.querySelector(".change-grid-size");
-
 // removes board div and creates another one
 gridButton.addEventListener('click', () => {
     const board = document.querySelector(".board");
     document.body.removeChild(board);
-    squares = prompt("How many squares per side?");
+    let squares = parseInt(prompt("How many squares per side?"));
+
+    // checks for errors - if input is wrong, squares goes back to 16
+    // has to be an int > 0 and <= 50
+    if (!Number.isInteger(squares) || squares > 50 || squares <= 0) {
+        squares = 16
+    }
+
     createGrid(squares);
 })
 
@@ -15,6 +21,8 @@ function createGrid(squares) {
     let board = document.createElement("div");
     board.classList.add("board");
     document.body.insertBefore(board, resetButton);
+
+    let newDiv;
 
     // creates the row containers
     let divRowContainers = [];
@@ -34,7 +42,7 @@ function createGrid(squares) {
         }
     })
 
-    let hoverDivs = document.querySelectorAll(".hover-div");
+    hoverDivs = document.querySelectorAll(".hover-div");
 
     hoverDivs.forEach(function(hoverDiv) {
         hoverDiv.addEventListener('mouseover', (e) => {
@@ -51,4 +59,4 @@ resetButton.addEventListener('click', () => {
     })
 })
 
-createGrid(16); //default # of squares is 16
+createGrid(16); // default # of squares per side
