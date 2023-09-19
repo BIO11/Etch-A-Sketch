@@ -1,17 +1,20 @@
 let newDiv;
+let board = document.querySelector(".board");
+let rows = 10;
+let cols = 10;
 
 // creates the 16 row containers
 let divRowContainers = [];
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < rows; i++) {
     newDiv = document.createElement('div');
     newDiv.classList.add("row-container");
-    document.body.appendChild(newDiv);
+    board.appendChild(newDiv);
     divRowContainers.push(newDiv);
 }
 
 // adds the 16 divs in each container
 divRowContainers.forEach(function(rowContainer) {
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < cols; i++) {
         newDiv = document.createElement('div');
         newDiv.classList.add("hover-div");
         rowContainer.appendChild(newDiv);
